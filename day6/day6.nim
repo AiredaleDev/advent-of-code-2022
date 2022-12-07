@@ -7,7 +7,7 @@ iterator subseqs(s: string, plen: int): (string, int) =
     lo += 1
 
 
-proc countPrePadding(stream: string, plen: int): int =
+func countPrePadding(stream: string, plen: int): int =
   for (maybePacket, hiPlusOne) in subseqs(stream, plen):
     let noDups = deduplicate(maybePacket)
     if len(noDups) == plen:
